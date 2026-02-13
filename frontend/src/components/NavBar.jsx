@@ -26,7 +26,7 @@ export const NavBar = () => {
                 <div className="flex space-x-5 items-center">
                     <Link to={user ? "/profile" : "/login"} className={linkStyle}>{currentUserLabel}</Link>
                     {!user && <Link to='/register' className={linkStyle}>Register</Link>}
-                    {user && <Button onClick={handleLogout}>Logout</Button>}
+                    {user && <Button className="text-black" onClick={handleLogout}>Logout</Button>}
                 </div>
 
             </div>

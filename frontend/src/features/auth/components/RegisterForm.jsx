@@ -12,10 +12,10 @@ const RegisterPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const [email, setEmail] = useState("testing@gmail.com");
-    const [password, setPassword] = useState("wikqum-wymhoj-5dYzn");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const [showPassword, setShowPassword] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const demoCreds = [
         { label: "Demo 1", email: "demo1@example.com", password: "demo-pass-111" },
@@ -28,8 +28,8 @@ const RegisterPage = () => {
             setLoading(true);
             setError(null);
             const newUser = await userCreate(email, password)
-            setUser(newUser);
-            navigate("/profile");
+            // setUser(newUser);
+            navigate("/login");
         } catch (err) {
             setError(err.message);
         } finally {
@@ -83,7 +83,7 @@ const RegisterPage = () => {
             </span>
             <Button onClick={handleCreateUser}>Create</Button>
         </div>
-    )
+    );
 }
 
 export default RegisterPage;

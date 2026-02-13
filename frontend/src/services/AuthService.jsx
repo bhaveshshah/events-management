@@ -22,7 +22,7 @@ export async function userCreate(email, password) {
 
     } else if (!response.ok) {
         const err = await response.json();
-        throw new Error(err.message || "Create user Failed")
+        throw new Error(err.message || "Create user Failed");
 
     }
 
@@ -53,7 +53,7 @@ export async function userLogin(email, password) {
     if (response.status === 403) {
         throw new Error("Invalid email or password");
 
-    } else if (response.status === 403) {
+    } else if (response.status === 409) {
         throw new Error("Password length must be at least 8 characters long");
 
     } else if (!response.ok) {

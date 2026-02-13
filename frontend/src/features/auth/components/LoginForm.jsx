@@ -13,10 +13,10 @@ const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const [email, setEmail] = useState("testing@gmail.com");
-    const [password, setPassword] = useState("wikqum-wymhoj-5dYzn");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const [showPassword, setShowPassword] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const demoCreds = [
         { label: "Demo 1", email: "demo1@example.com", password: "demo-pass-111" },
@@ -89,7 +89,7 @@ const LoginPage = () => {
             </span>
             <Button onClick={handleLogin}>Login</Button>
         </div>
-    )
+    );
 }
 
 export default LoginPage;

@@ -1,13 +1,9 @@
 import "./App.css";
-import { Button } from "./components/Button/Button";
 import { NavBar } from "./components/NavBar";
 
 // APIs
-import { use, useState, useReducer, useContext, useEffect } from "react";
-import { BrowserRouter, Link, Outlet, Route, Routes, useParams } from 'react-router';
-
-// Auth services
-import { userCreate, userLogin, getProfileByToken, getToken } from "./services/AuthService";
+import { useState } from "react";
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 
 // Pages
 import LoginPage from "./features/auth/components/LoginForm";
