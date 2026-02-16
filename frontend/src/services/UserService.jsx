@@ -13,11 +13,3 @@ export async function fetchUsers(id = "") {
     // returning array of events  
     return data.results;
 }; 
-
-export async function deleteUser(id) {
-    const response = await fetch(`${API_URL}/users/${id}`, {
-        method: "DELETE",
-    });
-    if (!response.ok) throw new Error('Failed to delete user');
-    return true;
-}
