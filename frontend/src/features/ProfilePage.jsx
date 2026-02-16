@@ -14,16 +14,18 @@ const ProfilePage = () => {
   useEffect(() => {
 
     const loadUsers = async () => {
-      if (!user) { return }
+      if (!user) {
+        return;
+      }
       try {
         const fetchedUsers = await fetchUsers();
-        console.log('Fetched users:', fetchedUsers);
+        console.log("Fetched users:", fetchedUsers);
         setUsers(fetchedUsers || []);
       } catch (err) {
-        console.error('Error loading users:', err);
+        console.error("Error loading users:", err);
         setError(err.message);
       }
-    }
+    };
 
     loadUsers();
 
@@ -35,26 +37,28 @@ const ProfilePage = () => {
 
       {!user && <p>❤️ Please login</p>}
 
-      {user &&
+      {user && (
         <div>
-          <p><strong>User ID:</strong> {user.id}</p>
-          <p><strong>Email:</strong> {user.email}</p>
+          <p>
+            <strong>User ID:</strong> {user.id}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
         </div>
-      }
+      )}
 
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      {error && <p style={{ color: "red" }}>Error: {error}</p>}
 
       <h4 className="pt-10">All Users ({users.length}):</h4>
-      {
-        user && users.map(u => (
+      {user &&
+        users.map((u) => (
           <div key={u.id}>
-            <p>{u.name || u.email || 'No name'}</p>
+            <p>{u.name || u.email || "No name"}</p>
           </div>
-        ))
-      }
-
+        ))}
     </div>
-  )
-}
+  );
+};
 
 export default ProfilePage;
