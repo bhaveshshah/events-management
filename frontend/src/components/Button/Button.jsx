@@ -14,7 +14,7 @@ const BUTTON_SIZES = ["small", "medium", "large"];
 const variantStyles = {
   primary:
     "bg-linear-to-bl from-violet-400 to-fuchsia-400 text-white font-semibold",
-  secondary: "bg-gray-600 hover:bg-gray-700 text-white",
+  secondary: "bg-blue-600 hover:bg-blue-700 text-white",
   danger: "bg-red-600 hover:bg-red-700 text-white",
 };
 
