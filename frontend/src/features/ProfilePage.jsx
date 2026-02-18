@@ -12,7 +12,6 @@ const ProfilePage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-
     const loadUsers = async () => {
       if (!user) {
         return;
@@ -28,7 +27,6 @@ const ProfilePage = () => {
     };
 
     loadUsers();
-
   }, []);
 
   return (

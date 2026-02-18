@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 import { Button } from "../../../components/Button/Button";
 import { UserContext } from "../../../context/UserContext";
 import { userLogin } from "../../../services/AuthService";
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -33,7 +34,7 @@ const LoginPage = () => {
       setError("");
       const loggedInUser = await userLogin(email, password);
       setUser(loggedInUser);
-      navigate("/profile");
+      navigate("/dashboard");
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       setError(message || "Login failed. Please try again.");
@@ -91,7 +92,7 @@ const LoginPage = () => {
                   className="bg-transparent border-none p-0 absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none cursor-pointer"
                   onClick={handleSetPassword}
                 >
-                  👁️
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
@@ -105,5 +106,3 @@ const LoginPage = () => {
     </div>
   );
 };
-
-export default LoginPage;
